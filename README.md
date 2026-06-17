@@ -19,7 +19,7 @@ uv run vrs-matcher plugins list
 uv run vrs-matcher match-samples SAMPLE_A SAMPLE_B --db variants.db --algorithm example
 ```
 
-## Developing 
+## Developing ⚙️
 
 ### Running as a script plugin
 
