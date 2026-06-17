@@ -2,8 +2,8 @@ from vrs_matcher.matcher import MatchResult, jaccard, weighted_concordance
 from vrs_matcher.plugins import PLUGIN_API_VERSION
 
 
-class MyPlugin:
-    name = "my-plugin"
+class ExamplePlugin:
+    name = "example"
     api_version = PLUGIN_API_VERSION
 
     def match_pair(self, context, sample_a, sample_b, *, candidate_vrs_ids=None):
@@ -46,5 +46,5 @@ class MyPlugin:
 
 
 def create_plugin():
-    return MyPlugin()
+    return ExamplePlugin()
 
