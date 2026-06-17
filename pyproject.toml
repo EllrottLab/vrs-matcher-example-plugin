@@ -1,0 +1,17 @@
+[project]
+name = "vrs-matcher-example-plugin"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Liam Beckman", email = "lbeckman314@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+vrs-matcher-example-plugin = "vrs_matcher_example_plugin:main"
+
+[build-system]
+requires = ["uv_build>=0.11.9,<0.12.0"]
+build-backend = "uv_build"
