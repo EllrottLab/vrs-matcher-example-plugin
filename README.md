@@ -44,7 +44,7 @@ uv run vrs-matcher match-sample SAMPLE_A --db variants.db --algorithm identity
 
 ### Project Layout
 
-```
+```sh
 vrs-matcher-example-plugin/
 ├── pyproject.toml
 ├── README.md
