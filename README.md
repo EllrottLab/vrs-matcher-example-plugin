@@ -1,6 +1,6 @@
-# vrs-matcher-example-plugin 🌀
+# Overview 🌀
 
-An example of a custom matching algorithm for [`vrs-matcher`](https://github.com/EllrottLab/vrs-matcher)
+An example of a custom matching algorithm for [`vrs-matcher`](https://github.com/EllrottLab/vrs-matcher)!
 
 
 > [!TIP]
