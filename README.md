@@ -46,10 +46,10 @@ uv run vrs-matcher match-sample SAMPLE_A --db variants.db --algorithm identity
 
 ```
 vrs-matcher-example-plugin/
-├── pyproject.toml          # package metadata + vrs_matcher.plugins entry point + git dep
+├── pyproject.toml
 ├── README.md
 └── src/
     └── vrs_matcher_example_plugin/
-        ├── __init__.py         # re-exports ExamplePlugin / create_plugin
-        └── example_plugin.py   # the plugin: ExamplePlugin + create_plugin()
+        ├── __init__.py
+        └── example_plugin.py   # Example Plugin
 ```
