@@ -1,24 +1,10 @@
 # Overview 🌀
 
-An example of a custom matching algorithm for [`vrs-matcher`](https://github.com/EllrottLab/vrs-matcher)!
+An example of a custom matching algorithm for [`vrs-matcher`](https://github.com/EllrottLab/vrs-matcher), built against [vrs-matcher/PR #14](https://github.com/EllrottLab/vrs-matcher/pull/14) + following the steps in [`plugins.md`](https://github.com/EllrottLab/vrs-matcher/blob/6cf6bd1c0b27f1cc1a3bf040dfce086a8804bc56/docs/plugins.md#recommended-development-workflow)!
 
-This plugin **restricts matching to a fixed panel of VRS IDs** (e.g. a disease
-gene panel) before scoring with plain Jaccard. It shows how a plugin can carry
-its own data and combine it with the caller's `candidate_vrs_ids`. The panel in
-[`example_plugin.py`](src/vrs_matcher_example_plugin/example_plugin.py) uses
-real VRS IDs from the main repo's `examples/example-cohort.vcf.gz` — **replace
-`EXAMPLE_PANEL` with VRS IDs from your own panel.**
+This example plugin restricts matching to a fixed panel of VRS IDs (e.g. a disease gene panel) before scoring with plain Jaccard/
 
-> [!WARNING]
->
-> Panel-restricted similarity is **not** genome-wide identity. The restriction
-> deliberately changes the ranking versus the built-in `identity` matcher —
-> make sure QC users know matching is limited to the panel.
-
-
-> [!TIP]
->
-> Built against [vrs-matcher/PR #14](https://github.com/EllrottLab/vrs-matcher/pull/14) + following the steps in [`plugins.md`](https://github.com/EllrottLab/vrs-matcher/blob/6cf6bd1c0b27f1cc1a3bf040dfce086a8804bc56/docs/plugins.md#recommended-development-workflow)
+The panel in [`example_plugin.py`](src/vrs_matcher_example_plugin/example_plugin.py) uses real VRS IDs from VRS Matcher's `examples/example-cohort.vcf.gz`
 
 ## Quick Start ⚡
 
