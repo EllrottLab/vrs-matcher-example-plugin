@@ -2,6 +2,19 @@
 
 An example of a custom matching algorithm for [`vrs-matcher`](https://github.com/EllrottLab/vrs-matcher)!
 
+This plugin **restricts matching to a fixed panel of VRS IDs** (e.g. a disease
+gene panel) before scoring with plain Jaccard. It shows how a plugin can carry
+its own data and combine it with the caller's `candidate_vrs_ids`. The panel in
+[`example_plugin.py`](src/vrs_matcher_example_plugin/example_plugin.py) uses
+real VRS IDs from the main repo's `examples/example-cohort.vcf.gz` — **replace
+`EXAMPLE_PANEL` with VRS IDs from your own panel.**
+
+> [!WARNING]
+>
+> Panel-restricted similarity is **not** genome-wide identity. The restriction
+> deliberately changes the ranking versus the built-in `identity` matcher —
+> make sure QC users know matching is limited to the panel.
+
 
 > [!TIP]
 >
@@ -10,13 +23,26 @@ An example of a custom matching algorithm for [`vrs-matcher`](https://github.com
 ## Quick Start ⚡
 
 ```sh
+git clone https://github.com/EllrottLab/vrs-matcher-example-plugin
+
+cd vrs-matcher-example-plugin
+
 uv sync
 
 uv run vrs-matcher plugins list
 # example
 # identity
 
+wget https://github.com/EllrottLab/vrs-matcher/raw/refs/heads/development/examples/example-cohort.vcf.gz
+
+uv run vrs-matcher load-samples example-cohort.vcf.gz --db variants.db
+# Loaded 6 allele records into variants.db
+
 uv run vrs-matcher match-samples SAMPLE_A SAMPLE_B --db variants.db --algorithm example
+# Jaccard:              1.0000
+# Weighted concordance: 1.0000
+# Shared variants:      2
+# Total alleles (A/B):  2 / 2
 ```
 
 ## Developing ⚙️
@@ -27,6 +53,11 @@ uv run vrs-matcher match-samples SAMPLE_A SAMPLE_B --db variants.db --algorithm 
 uv run vrs-matcher match-samples SAMPLE_A SAMPLE_B \
   --db variants.db \
   --plugin-file src/vrs_matcher_example_plugin/example_plugin.py
+
+# Jaccard:              1.0000
+# Weighted concordance: 1.0000
+# Shared variants:      2
+# Total alleles (A/B):  2 / 2
 ```
 
 ### Testing
@@ -47,8 +78,10 @@ uv run vrs-matcher match-sample SAMPLE_A --db variants.db --algorithm identity
 vrs-matcher-example-plugin/
 ├── pyproject.toml
 ├── README.md
-└── src/
-    └── vrs_matcher_example_plugin/
-        ├── __init__.py
-        └── example_plugin.py   # Example Plugin
+├── src/
+│   └── vrs_matcher_example_plugin/
+│       ├── __init__.py
+│       └── example_plugin.py   # Example Plugin
+└── tests/
+    └── test_example_plugin.py  # Plugin tests
 ```

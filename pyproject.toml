@@ -14,9 +14,14 @@ dependencies = [
 [project.entry-points."vrs_matcher.plugins"]
 example = "vrs_matcher_example_plugin.example_plugin:create_plugin"
 
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
 [build-system]
 requires = ["uv_build>=0.11.9,<0.12.0"]
 build-backend = "uv_build"
 
 [tool.uv.sources]
-vrs-matcher = { git = "https://github.com/EllrottLab/vrs-matcher.git", rev = "6cf6bd1c0b27f1cc1a3bf040dfce086a8804bc56" }
+vrs-matcher = { git = "https://github.com/EllrottLab/vrs-matcher.git" }
