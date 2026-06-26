@@ -14,6 +14,11 @@ dependencies = [
 [project.entry-points."vrs_matcher.plugins"]
 example = "vrs_matcher_example_plugin.example_plugin:create_plugin"
 
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
 [build-system]
 requires = ["uv_build>=0.11.9,<0.12.0"]
 build-backend = "uv_build"
