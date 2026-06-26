@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# vrs-matcher generated databases and downloaded cohorts
+*.db
+*.vcf.gz
