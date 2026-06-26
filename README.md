@@ -5,7 +5,7 @@ An example of a custom matching algorithm for [`vrs-matcher`](https://github.com
 
 > [!TIP]
 >
-> Built against [vrs-matcher/PR #16](https://github.com/EllrottLab/vrs-matcher/pull/16) + following the steps in [`plugins.md`](https://github.com/EllrottLab/vrs-matcher/blob/6cf6bd1c0b27f1cc1a3bf040dfce086a8804bc56/docs/plugins.md#recommended-development-workflow)
+> Built against [vrs-matcher/PR #14](https://github.com/EllrottLab/vrs-matcher/pull/14) + following the steps in [`plugins.md`](https://github.com/EllrottLab/vrs-matcher/blob/6cf6bd1c0b27f1cc1a3bf040dfce086a8804bc56/docs/plugins.md#recommended-development-workflow)
 
 ## Quick Start ⚡
 
